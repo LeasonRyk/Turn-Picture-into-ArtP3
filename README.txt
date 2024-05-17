@@ -1,4 +1,4 @@
-# MakeCartoon
+## MakeCartoon
 
 This repository contains a Python script to convert images into cartoon-style images using various image processing techniques.
 
