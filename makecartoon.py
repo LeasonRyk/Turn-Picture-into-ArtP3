@@ -14,7 +14,7 @@ def makecartoon(image):
     output = np.array(image)
     x, y, c = output.shape
 
-    for i in xrange(c):
+    for i in range(c):
         output[:, :, i] = cv2.bilateralFilter(output[:, :, i], 5, 50, 50)
     edge = cv2.Canny(output, 100, 200)
 
@@ -37,7 +37,7 @@ def makecartoon(image):
     print("centroids: {0}".format(C))
 
     output = output.reshape((-1, c))
-    for i in xrange(c):
+    for i in range(c):
         channel = output[:, i]
         index = np.argmin(np.abs(channel[:, np.newaxis] - C[i]), axis=1)
         output[:, i] = C[i][index]
@@ -111,7 +111,7 @@ def k_histogram(hist):
         else:
             C = np.array(sorted(new_C))
     return C
-	
+
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required = True, help = "Path to the image")
